@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Entringer GitHub Bot - A bot to manage GitHub repositories by automating common tasks",
   "main": "index.js",
+  "engines": {
+    "node": ">=22.14.0"
+  },
   "scripts": {
     "start": "probot run ./src/index.js",
     "dev": "nodemon --exec \"npm start\"",

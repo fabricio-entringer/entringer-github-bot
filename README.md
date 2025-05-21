@@ -14,7 +14,7 @@ Entringer GitHub Bot is a bot built with Probot that helps manage repositories b
 
 ### Prerequisites
 
-- Node.js (version 16 or above)
+- Node.js (version 22.14.0 or above)
 - npm or yarn
 - A GitHub account
 
