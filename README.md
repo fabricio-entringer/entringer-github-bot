@@ -1,4 +1,4 @@
-# Entringer GitHub Bot   [![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
+# Entringer GitHub Bot &nbsp;&nbsp;&nbsp;&nbsp; [![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
 
 <p align="center">
   <img src="./assets/entringer-bot-logo.png" alt="Entringer GitHub Bot Logo" width="350" />
