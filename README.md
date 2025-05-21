@@ -1,5 +1,7 @@
 # GitHub Bot
 
+[![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
+
 A GitHub bot built with Probot that helps manage repositories by automating common tasks.
 
 ## Features
