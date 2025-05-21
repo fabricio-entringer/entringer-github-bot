@@ -22,7 +22,7 @@ const express = require('express');
 const server = express();
 
 // Add the Probot middleware to the server
-server.use(createNodeMiddleware(app, { probot }));
+server.use('/', createNodeMiddleware(app, { probot }));
 
 // Explicitly set the port
 const PORT = process.env.PORT || 3000;
