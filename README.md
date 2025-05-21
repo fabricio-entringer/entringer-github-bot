@@ -1,6 +1,6 @@
-# Entringer GitHub Bot
+# Entringer GitHub Bot   [![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
 
-[![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
+![Entringer GitHub Bot Logo](./assets/entringer-bot-logo.png)
 
 Entringer GitHub Bot is a bot built with Probot that helps manage repositories by automating common tasks with a fun, robotic personality. All messages include robot emojis (🤖) and highlight the bot's name for a distinctive presence in your repository.
 
