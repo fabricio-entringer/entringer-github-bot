@@ -1,0 +1,30 @@
+{
+  "name": "entringer-github-bot",
+  "version": "1.0.0",
+  "description": "Bot to manage GitHub stuff by using GitHub apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "probot run ./src/index.js",
+    "dev": "nodemon --exec \"npm start\"",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricio-entringer/entringer-github-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabricio-entringer/entringer-github-bot/issues"
+  },
+  "homepage": "https://github.com/fabricio-entringer/entringer-github-bot#readme",
+  "dependencies": {
+    "probot": "^13.4.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nock": "^14.0.4",
+    "nodemon": "^3.1.10"
+  }
+}

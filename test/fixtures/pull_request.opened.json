@@ -1,0 +1,21 @@
+{
+  "action": "opened",
+  "pull_request": {
+    "number": 1,
+    "user": {
+      "login": "octocat"
+    },
+    "title": "Test PR",
+    "body": "Test PR body"
+  },
+  "repository": {
+    "name": "hello-world",
+    "owner": {
+      "login": "octocat"
+    },
+    "full_name": "octocat/hello-world"
+  },
+  "sender": {
+    "login": "octocat"
+  }
+}
