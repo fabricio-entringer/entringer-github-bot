@@ -1,3 +1,10 @@
+// Set up node-fetch to work with nock
+const nodeFetch = require('node-fetch');
+global.fetch = nodeFetch;
+global.Request = nodeFetch.Request;
+global.Response = nodeFetch.Response;
+global.Headers = nodeFetch.Headers;
+
 const nock = require("nock");
 const { Probot, ProbotOctokit } = require("probot");
 const app = require("../src/index");
