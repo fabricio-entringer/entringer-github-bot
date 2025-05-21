@@ -3,12 +3,12 @@
  * @param {import('probot').Probot} app
  */
 module.exports = (app) => {
-  app.log.info("Probot app is loaded!");
+  app.log.info("Entringer GitHub Bot is loaded!");
 
   // Handler for when issues are opened
   app.on("issues.opened", async (context) => {
     const issueComment = context.issue({
-      body: "Thanks for opening this issue! Our team will review it shortly.",
+      body: "Thanks for opening this issue! Entringer GitHub Bot here - our team will review your issue shortly.",
     });
     return context.octokit.issues.createComment(issueComment);
   });
@@ -24,7 +24,7 @@ module.exports = (app) => {
     if (!issueNumberMatch) {
       // No issue number found in PR title
       const warningComment = context.issue({
-        body: "⚠️ Pull request title should reference an issue number (e.g., #123).",
+        body: "⚠️ [Entringer GitHub Bot] Pull request title should reference an issue number (e.g., #123).",
       });
       return context.octokit.issues.createComment(warningComment);
     }
@@ -39,13 +39,13 @@ module.exports = (app) => {
       
       // Issue exists, add a success comment
       const successComment = context.issue({
-        body: `✅ Pull request successfully linked to issue #${issueNumber}.`,
+        body: `✅ [Entringer GitHub Bot] Pull request successfully linked to issue #${issueNumber}.`,
       });
       return context.octokit.issues.createComment(successComment);
     } catch (error) {
       // Issue doesn't exist or other error
       const errorComment = context.issue({
-        body: `❌ Referenced issue #${issueNumber} does not exist in this repository.`,
+        body: `❌ [Entringer GitHub Bot] Referenced issue #${issueNumber} does not exist in this repository.`,
       });
       return context.octokit.issues.createComment(errorComment);
     }

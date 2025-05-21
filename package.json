@@ -1,7 +1,7 @@
 {
   "name": "entringer-github-bot",
   "version": "1.0.0",
-  "description": "Bot to manage GitHub stuff by using GitHub apps",
+  "description": "Entringer GitHub Bot - A bot to manage GitHub repositories by automating common tasks",
   "main": "index.js",
   "scripts": {
     "start": "probot run ./src/index.js",
@@ -12,8 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/fabricio-entringer/entringer-github-bot.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "probot",
+    "github-app",
+    "entringer-github-bot"
+  ],
+  "author": "Fabricio Entringer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fabricio-entringer/entringer-github-bot/issues"

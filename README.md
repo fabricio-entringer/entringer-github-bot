@@ -1,8 +1,8 @@
-# GitHub Bot
+# Entringer GitHub Bot
 
 [![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
 
-A GitHub bot built with Probot that helps manage repositories by automating common tasks.
+Entringer GitHub Bot is a bot built with Probot that helps manage repositories by automating common tasks.
 
 ## Features
 
@@ -38,12 +38,12 @@ A GitHub bot built with Probot that helps manage repositories by automating comm
    WEBHOOK_SECRET=<your-webhook-secret>
    ```
 
-### Creating a GitHub App
+### Creating the Entringer GitHub App
 
 1. Go to your GitHub account settings
 2. Navigate to "Developer settings" > "GitHub Apps" > "New GitHub App"
 3. Fill in the required information:
-   - GitHub App name: Your choice (e.g., "Issue and PR Bot")
+   - GitHub App name: "Entringer GitHub Bot"
    - Homepage URL: Can be the repository URL
    - Webhook URL: Your bot's URL or use a proxy like Smee.io for development
    - Webhook secret: Create a random string and save it
@@ -73,9 +73,9 @@ A GitHub bot built with Probot that helps manage repositories by automating comm
 
    Note: For the PRIVATE_KEY, you'll need to open the .pem file and copy its contents, including the BEGIN and END lines
 
-### Installing the GitHub App in a Repository
+### Installing the Entringer GitHub App in a Repository
 
-1. After creating your GitHub App, go to the "Install App" tab on your GitHub App's settings page
+1. After creating your Entringer GitHub Bot app, go to the "Install App" tab on your GitHub App's settings page
 2. Choose the account where you want to install the app
 3. Select either:
    - All repositories: To install the app on all repositories in the account
@@ -84,7 +84,7 @@ A GitHub bot built with Probot that helps manage repositories by automating comm
 5. If you want to install the app on additional repositories later:
    - Go to your GitHub account settings
    - Navigate to "Applications" > "GitHub Apps" > "Installed GitHub Apps"
-   - Find your app and click "Configure"
+   - Find your Entringer GitHub Bot app and click "Configure"
    - Modify the repository access as needed
 
 ### Local Development with Smee.io
@@ -93,7 +93,7 @@ For local development, you'll need to forward GitHub's webhooks to your local ma
 
 1. Go to [Smee.io](https://smee.io/) and click "Start a new channel"
 2. Copy the webhook proxy URL
-3. Update your GitHub App's webhook URL with this Smee URL
+3. Update your Entringer GitHub Bot's webhook URL with this Smee URL
 4. Install the Smee client:
 
    ```bash
