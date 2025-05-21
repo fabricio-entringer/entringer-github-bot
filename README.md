@@ -2,13 +2,15 @@
 
 [![Build Status](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/fabricio-entringer/entringer-github-bot/actions/workflows/test.yml)
 
-Entringer GitHub Bot is a bot built with Probot that helps manage repositories by automating common tasks.
+Entringer GitHub Bot is a bot built with Probot that helps manage repositories by automating common tasks with a fun, robotic personality. All messages include robot emojis (🤖) and highlight the bot's name for a distinctive presence in your repository.
 
 ## Features
 
-1. **Issue Comments**: Automatically comments on new issues to acknowledge receipt.
-2. **PR Comments**: Automatically comments on new pull requests to acknowledge receipt.
-3. **PR Title Validation**: Validates pull request titles to ensure they reference a valid issue number.
+1. **Robot-Themed Issue Comments**: Greets new issues with "🤖 Beep boop!" messages and a friendly robotic tone, making issue management more engaging.
+
+2. **Fun PR Comments**: Responds to pull requests with playful robotic messages like "🤖 *COMPUTING SUCCESS!*" or "🤖 *ALERT! ALERT!*", adding character to your development workflow.
+
+3. **Robotic PR Validation**: Checks if pull request titles reference valid issue numbers and provides feedback in a distinctive robot voice with phrases like "Excellent work, human!" or "ERROR! ERROR!".
 
 ## Setup
 
@@ -21,18 +23,21 @@ Entringer GitHub Bot is a bot built with Probot that helps manage repositories b
 ### Installation
 
 1. Clone this repository:
+
    ```bash
    git clone https://github.com/fabricio-entringer/entringer-github-bot.git
    cd entringer-github-bot
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Create a `.env` file in the root directory with the following content:
-   ```
+
+   ```env
    APP_ID=<your-app-id>
    PRIVATE_KEY=<your-private-key>
    WEBHOOK_SECRET=<your-webhook-secret>

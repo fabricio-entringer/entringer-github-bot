@@ -36,7 +36,8 @@ describe("Entringer GitHub Bot", () => {
     // Mock the API endpoints
     const mock = nock("https://api.github.com")
       .post("/repos/octocat/hello-world/issues/1/comments", (body) => {
-        expect(body.body).toMatch("Entringer GitHub Bot");
+        expect(body.body).toMatch("🤖");
+        expect(body.body).toMatch("**Entringer GitHub Bot**");
         return true;
       })
       .reply(200);
@@ -54,7 +55,8 @@ describe("Entringer GitHub Bot", () => {
     // Mock the API endpoints
     const mock = nock("https://api.github.com")
       .post("/repos/octocat/hello-world/issues/1/comments", (body) => {
-        expect(body.body).toMatch("[Entringer GitHub Bot]");
+        expect(body.body).toMatch("🤖");
+        expect(body.body).toMatch("**Entringer GitHub Bot**");
         expect(body.body).toMatch("Pull request title should reference an issue number");
         return true;
       })
@@ -83,8 +85,9 @@ describe("Entringer GitHub Bot", () => {
 
     const commentMock = nock("https://api.github.com")
       .post("/repos/octocat/hello-world/issues/1/comments", (body) => {
-        expect(body.body).toMatch("[Entringer GitHub Bot]");
-        expect(body.body).toMatch("successfully linked to issue #123");
+        expect(body.body).toMatch("🤖");
+        expect(body.body).toMatch("**Entringer GitHub Bot**");
+        expect(body.body).toMatch("linked this pull request to issue #123");
         return true;
       })
       .reply(200);
@@ -108,7 +111,8 @@ describe("Entringer GitHub Bot", () => {
     // Mock the API endpoints
     const commentMock = nock("https://api.github.com")
       .post("/repos/octocat/hello-world/issues/1/comments", (body) => {
-        expect(body.body).toMatch("[Entringer GitHub Bot]");
+        expect(body.body).toMatch("🤖");
+        expect(body.body).toMatch("**Entringer GitHub Bot**");
         expect(body.body).toMatch("Pull request title should reference an issue number");
         return true;
       })
@@ -137,8 +141,9 @@ describe("Entringer GitHub Bot", () => {
 
     const commentMock = nock("https://api.github.com")
       .post("/repos/octocat/hello-world/issues/1/comments", (body) => {
-        expect(body.body).toMatch("[Entringer GitHub Bot]");
-        expect(body.body).toMatch("Referenced issue #999 does not exist");
+        expect(body.body).toMatch("🤖");
+        expect(body.body).toMatch("**Entringer GitHub Bot**");
+        expect(body.body).toMatch("does not exist");
         return true;
       })
       .reply(200);
