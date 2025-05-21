@@ -8,7 +8,7 @@ module.exports = (app) => {
   // Handler for when issues are opened
   app.on("issues.opened", async (context) => {
     const issueComment = context.issue({
-      body: "Thanks for opening this issue! Entringer GitHub Bot here - our team will review your issue shortly.",
+      body: "🤖 Beep boop! Thanks for opening this issue! **Entringer GitHub Bot** here - our team will review your issue shortly!",
     });
     return context.octokit.issues.createComment(issueComment);
   });
@@ -24,7 +24,7 @@ module.exports = (app) => {
     if (!issueNumberMatch) {
       // No issue number found in PR title
       const warningComment = context.issue({
-        body: "⚠️ [Entringer GitHub Bot] Pull request title should reference an issue number (e.g., #123).",
+        body: "🤖 *ALERT! ALERT!* ⚠️ **Entringer GitHub Bot** detected a missing issue reference! Pull request title should reference an issue number (e.g., #123).",
       });
       return context.octokit.issues.createComment(warningComment);
     }
@@ -39,13 +39,13 @@ module.exports = (app) => {
       
       // Issue exists, add a success comment
       const successComment = context.issue({
-        body: `✅ [Entringer GitHub Bot] Pull request successfully linked to issue #${issueNumber}.`,
+        body: `🤖 *COMPUTING SUCCESS!* ✅ **Entringer GitHub Bot** has successfully linked this pull request to issue #${issueNumber}. Excellent work, human!`,
       });
       return context.octokit.issues.createComment(successComment);
     } catch (error) {
       // Issue doesn't exist or other error
       const errorComment = context.issue({
-        body: `❌ [Entringer GitHub Bot] Referenced issue #${issueNumber} does not exist in this repository.`,
+        body: `🤖 *ERROR! ERROR!* ❌ **Entringer GitHub Bot** could not compute issue #${issueNumber}. This issue does not exist in my database. Please check and try again!`,
       });
       return context.octokit.issues.createComment(errorComment);
     }
