@@ -16,6 +16,7 @@ Entringer GitHub Bot is a bot built with Probot that helps manage repositories b
 
 4. **Version Check Enforcement**: Automatically ensures that PRs targeting the master branch include a version update in package.json, maintaining proper semantic versioning discipline across all monitored repositories.
 
+
 ## Setup
 
 ### Prerequisites
