@@ -57,6 +57,24 @@ describe("Master PR Version Check", () => {
       }
     };
 
+    // Mock the API endpoint for creating check run
+    const createCheckMock = nock("https://api.github.com")
+      .post("/repos/octocat/hello-world/check-runs", body => {
+        return body.name === "Entringer Bot Version Check" && 
+               body.head_sha === "pr-branch-sha" &&
+               body.status === "in_progress";
+      })
+      .reply(201, { id: 12345 });
+
+    // Mock the API endpoint for updating check run
+    const updateCheckMock = nock("https://api.github.com")
+      .patch("/repos/octocat/hello-world/check-runs/12345", body => {
+        return body.status === "completed" && 
+               body.conclusion === "failure" &&
+               body.output.title.includes("PR Blocked");
+      })
+      .reply(200);
+
     // Mock the API endpoints for getting package.json from PR branch
     nock("https://api.github.com")
       .get("/repos/octocat/hello-world/contents/package.json?ref=pr-branch-sha")
@@ -82,7 +100,9 @@ describe("Master PR Version Check", () => {
     // Simulate the webhook
     await probot.receive({ name: "pull_request", payload });
 
-    // Ensure API endpoint was called
+    // Ensure API endpoints were called
+    expect(createCheckMock.isDone()).toBe(true);
+    expect(updateCheckMock.isDone()).toBe(true);
     expect(commentMock.isDone()).toBe(true);
   }, 10000); // Increase timeout to 10 seconds
 
@@ -109,6 +129,24 @@ describe("Master PR Version Check", () => {
       }
     };
 
+    // Mock the API endpoint for creating check run
+    const createCheckMock = nock("https://api.github.com")
+      .post("/repos/octocat/hello-world/check-runs", body => {
+        return body.name === "Entringer Bot Version Check" && 
+               body.head_sha === "pr-branch-sha" &&
+               body.status === "in_progress";
+      })
+      .reply(201, { id: 12345 });
+
+    // Mock the API endpoint for updating check run
+    const updateCheckMock = nock("https://api.github.com")
+      .patch("/repos/octocat/hello-world/check-runs/12345", body => {
+        return body.status === "completed" && 
+               body.conclusion === "success" &&
+               body.output.title === "Version Correctly Updated";
+      })
+      .reply(200);
+
     // Mock the API endpoints for getting package.json from PR branch
     nock("https://api.github.com")
       .get("/repos/octocat/hello-world/contents/package.json?ref=pr-branch-sha")
@@ -134,7 +172,9 @@ describe("Master PR Version Check", () => {
     // Simulate the webhook
     await probot.receive({ name: "pull_request", payload });
 
-    // Ensure API endpoint was called
+    // Ensure API endpoints were called
+    expect(createCheckMock.isDone()).toBe(true);
+    expect(updateCheckMock.isDone()).toBe(true);
     expect(commentMock.isDone()).toBe(true);
   }, 10000); // Increase timeout to 10 seconds
 });
