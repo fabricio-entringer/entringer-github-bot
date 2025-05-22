@@ -1,6 +1,6 @@
 {
   "name": "entringer-github-bot",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Entringer GitHub Bot - A bot to manage GitHub repositories by automating common tasks",
   "main": "src/index.js",
   "engines": {
