@@ -14,6 +14,8 @@ Entringer GitHub Bot is a bot built with Probot that helps manage repositories b
 
 3. **Robotic PR Validation**: Checks if pull request titles reference valid issue numbers and provides feedback in a distinctive robot voice with phrases like "Excellent work, human!" or "ERROR! ERROR!".
 
+4. **Version Check Enforcement**: Automatically ensures that PRs targeting the master branch include a version update in package.json, maintaining proper semantic versioning discipline across all monitored repositories.
+
 ## Setup
 
 ### Prerequisites
@@ -151,3 +153,22 @@ Follow the Probot deployment documentation for detailed instructions on each pla
 ## License
 
 ISC
+
+## Bot Features in Detail
+
+### Version Check for Master PRs
+
+The bot automatically checks if the version in `package.json` has been updated when creating or updating a pull request targeting the master/main branch. This ensures proper semantic versioning practices across all repositories where the bot is installed.
+
+#### How it works:
+
+1. When a PR is opened or updated against the master/main branch:
+   - The bot compares the version in the PR's package.json with the version in the master branch
+   - If the version hasn't changed, the bot adds a comment explaining that the version needs to be updated
+   - If the version has been updated, the bot adds a success comment
+
+#### Guidelines for version updates:
+
+- **Major version (x.0.0)**: Breaking changes
+- **Minor version (0.x.0)**: New features, no breaking changes 
+- **Patch version (0.0.x)**: Bug fixes and minor changes
