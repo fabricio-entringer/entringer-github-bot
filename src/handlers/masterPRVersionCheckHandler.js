@@ -5,6 +5,12 @@
 async function handleMasterPRVersionCheck(context) {
   const pr = context.payload.pull_request;
   
+  // Check if we have all the necessary properties before proceeding
+  if (!pr || !pr.base || !pr.base.ref || !pr.head || !pr.head.sha) {
+    // Missing required properties, skipping check
+    return;
+  }
+  
   // Only proceed if the target branch is master or main
   const targetBranch = pr.base.ref;
   if (targetBranch !== 'master' && targetBranch !== 'main') {
