@@ -165,11 +165,29 @@ The bot automatically checks if the version in `package.json` has been updated w
 
 1. When a PR is opened or updated against the master/main branch:
    - The bot compares the version in the PR's package.json with the version in the master branch
-   - If the version hasn't changed, the bot adds a comment explaining that the version needs to be updated
-   - If the version has been updated, the bot adds a success comment
+   - The bot creates a GitHub Check Run to validate the version change
+   - If the version hasn't changed, the bot:
+     - Marks the check as failed, blocking the PR from being merged
+     - Adds a comment explaining that the version needs to be updated
+   - If the version has been updated, the bot:
+     - Marks the check as successful, allowing the PR to be merged
+     - Adds a success comment
 
 #### Guidelines for version updates:
 
 - **Major version (x.0.0)**: Breaking changes
 - **Minor version (0.x.0)**: New features, no breaking changes 
 - **Patch version (0.0.x)**: Bug fixes and minor changes
+
+### Pull Request Validation
+
+The bot checks if pull request titles reference valid issue numbers, ensuring traceability between issues and code changes.
+
+#### How it works:
+
+1. When a PR is opened or updated:
+   - The bot looks for issue references in the format "Fix #123" or "Closes #456" in the PR title
+   - The bot creates a GitHub Check Run to validate the issue reference
+   - If a valid issue reference is found, the check passes
+   - If no issue reference is found, the check fails, blocking the PR from being merged
+   - The bot also adds a comment with robotic-themed feedback
